@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.GongsitushuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.GongsitushuEntity" id="gongsitushuMap">
+        <result property="tushumingcheng" column="tushumingcheng"/>
+        <result property="tushuleixing" column="tushuleixing"/>
+        <result property="tushujieshao" column="tushujieshao"/>
+        <result property="shuliang" column="shuliang"/>
+        <result property="jieyueshuoming" column="jieyueshuoming"/>
+        <result property="dengjiriqi" column="dengjiriqi"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.GongsitushuVO" >
+		SELECT * FROM gongsitushu  gongsitushu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.GongsitushuVO" >
+		SELECT  gongsitushu.* FROM gongsitushu  gongsitushu
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.GongsitushuView" >
+
+		SELECT  gongsitushu.* FROM gongsitushu  gongsitushu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.GongsitushuView" >
+		SELECT * FROM gongsitushu  gongsitushu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>

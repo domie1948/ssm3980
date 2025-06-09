@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.GudingzichanDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.GudingzichanEntity" id="gudingzichanMap">
+        <result property="bianhao" column="bianhao"/>
+        <result property="zichanmingcheng" column="zichanmingcheng"/>
+        <result property="guige" column="guige"/>
+        <result property="shuliang" column="shuliang"/>
+        <result property="gourujine" column="gourujine"/>
+        <result property="gonghuoshang" column="gonghuoshang"/>
+        <result property="goururiqi" column="goururiqi"/>
+        <result property="cunfangweizhi" column="cunfangweizhi"/>
+        <result property="guanlizhanghao" column="guanlizhanghao"/>
+        <result property="guanlixingming" column="guanlixingming"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.GudingzichanVO" >
+		SELECT * FROM gudingzichan  gudingzichan         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.GudingzichanVO" >
+		SELECT  gudingzichan.* FROM gudingzichan  gudingzichan
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.GudingzichanView" >
+
+		SELECT  gudingzichan.* FROM gudingzichan  gudingzichan 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.GudingzichanView" >
+		SELECT * FROM gudingzichan  gudingzichan <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
